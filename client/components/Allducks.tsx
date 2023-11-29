@@ -1,4 +1,4 @@
-import { useQuery } from 'react-query'
+import { useQuery } from '@tanstack/react-query'
 import { getDuck } from '../apis/api'
 import {
   Box,
@@ -21,7 +21,11 @@ interface Duck {
 }
 
 const Ducks = () => {
-  const { data: Ducks, isLoading, error } = useQuery<Duck[]>('Ducks', getDuck)
+  const {
+    data: Ducks,
+    isLoading,
+    error,
+  } = useQuery<Duck[]>({ queryKey: ['Ducks'], queryFn: getDuck })
 
   if (isLoading) {
     return <p>Loading...</p>
