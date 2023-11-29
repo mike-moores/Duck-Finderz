@@ -1,6 +1,7 @@
 import { QueryClient, QueryClientProvider } from 'react-query'
 import { ReactQueryDevtools } from 'react-query/devtools'
 import Ducks from './Allducks'
+import LoginPage from './LoginPage'
 
 const queryClient = new QueryClient()
 
@@ -12,7 +13,8 @@ function App() {
           <h1>My Collection</h1>
         </header> */}
         <div>
-          <Ducks />
+          <LoginPage />
+          {/* <Ducks /> */}
         </div>
         <section className="main">{/* add your code here */}</section>
       </div>

@@ -46,10 +46,7 @@ const Ducks = () => {
               {' '}
               <Text fontSize="4xl">New Duck</Text>
             </GridItem>
-            <GridItem colSpan={1}>
-              {' '}
-              <Text fontSize="4xl">Login</Text>
-            </GridItem>
+
             <GridItem colSpan={3}>
               <Box bg="tomato" w="100%" p={4} color="white">
                 Common
