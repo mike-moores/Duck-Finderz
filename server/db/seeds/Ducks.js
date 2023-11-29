@@ -21,8 +21,9 @@ export async function seed(knex) {
         'https://cdn.discordapp.com/attachments/1179153443324174366/1179236212578467891/image.png?ex=65790c4e&is=6566974e&hm=2d41fbc6f3e6ebb225d6c9fe9b734686f881910c3568f893067bf6cb4d78e6b6&',
     },
     { id: 4, name: 'duck 4', image: '/images/pixel-rubber-duck-bubbles.png' },
-    { id: 5, name: 'duck 4', image: '/images/flamingo.png' },
-    { id: 6, name: 'duck 4', image: '/images/little-duck.png' },
-    { id: 7, name: 'duck 4', image: '/images/pixel-mallard.png' },
+    { id: 5, name: 'duck 5', image: '/images/flamingo.png' },
+    { id: 6, name: 'duck 6', image: '/images/little-duck.png' },
+    { id: 7, name: 'duck 7', image: '/images/pixel-mallard.png' },
+    { id: 8, name: 'duck 8', image: '/images/knife-duck.png' },
   ])
 }
