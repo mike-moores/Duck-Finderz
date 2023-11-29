@@ -8,9 +8,9 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <div>
-        <header className="header">
+        {/* <header className="header">
           <h1>My Collection</h1>
-        </header>
+        </header> */}
         <div>
           <Ducks />
         </div>
@@ -22,4 +22,3 @@ function App() {
 }
 
 export default App
-

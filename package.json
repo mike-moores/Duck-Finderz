@@ -30,8 +30,12 @@
     ]
   },
   "dependencies": {
+    "@chakra-ui/react": "^2.8.2",
     "@devacademy/eslint-config": "^1.9.1",
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
     "express": "^4.17.2",
+    "framer-motion": "^10.16.5",
     "knex": "^2.5.1",
     "react-query": "^3.39.3",
     "sqlite3": "^5.1.6",
