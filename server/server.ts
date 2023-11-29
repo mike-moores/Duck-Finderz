@@ -5,6 +5,7 @@ import express from 'express'
 const server = express()
 server.use(express.json())
 server.use('/api/v1/routes', routes)
+server.use('/images', express.static(Path.join(__dirname, 'images')));
 
 if (process.env.NODE_ENV === 'production') {
   server.use(express.static(Path.resolve('public')))
