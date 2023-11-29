@@ -5,8 +5,7 @@ export async function seed(knex) {
     {
       id: 1,
       name: 'duck 1',
-      image:
-        'https://cdn.discordapp.com/attachments/1157146433393274950/1179242186680827975/jojo_duck.png?ex=657911de&is=65669cde&hm=bb130dede9326515e54bf4c5e71ed9ffe28d1ebb3bbf2265e7b53efec87f5bd9&',
+      image: '/images/gym-duck.png',
     },
     {
       id: 2,

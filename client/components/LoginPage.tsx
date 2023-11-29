@@ -2,6 +2,8 @@ import { Text, Box, Center, Button, ButtonGroup } from '@chakra-ui/react'
 import { GiDuck } from 'react-icons/gi'
 import { CgNotes } from 'react-icons/cg'
 import { useState } from 'react'
+import { IfAuthenticated, IfNotAuthenticated } from './Authenticated'
+import { useAuth0 } from '@auth0/auth0-react'
 
 export default function LoginPage() {
   const [visibility, setVisibility] = useState(false)
@@ -24,9 +26,15 @@ export default function LoginPage() {
       >
         <Center>
           <ButtonGroup marginTop="50vh">
-            <Button leftIcon={<GiDuck />} borderColor="black" borderWidth="1px">
-              Login
-            </Button>
+            <IfNotAuthenticated>
+              <Button
+                leftIcon={<GiDuck />}
+                borderColor="black"
+                borderWidth="1px"
+              >
+                Login
+              </Button>
+            </IfNotAuthenticated>
             <Button
               rightIcon={<CgNotes />}
               borderColor="black"
