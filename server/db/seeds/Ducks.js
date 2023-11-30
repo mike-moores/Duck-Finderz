@@ -24,5 +24,6 @@ export async function seed(knex) {
     { id: 6, name: 'duck 6', image: '/images/little-duck.png' },
     { id: 7, name: 'duck 7', image: '/images/pixel-mallard.png' },
     { id: 8, name: 'duck 8', image: '/images/knife-duck.png' },
+    { id: 8, name: 'duck 8', image: '/Users/teancumscotosn/Documents/GitHub/Duck-Finderz/public/images/jojo_duck-removebg-preview.png' },
   ])
 }
