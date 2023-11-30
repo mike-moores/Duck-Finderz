@@ -32,7 +32,7 @@ const Ducks = () => {
 
   return (
     <div>
-      <Container>
+      <Container marginTop="25px">
         <Grid templateColumns="repeat(3, 1fr)">
           <GridItem colSpan={3}>
             {' '}

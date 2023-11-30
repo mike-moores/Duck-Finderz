@@ -1,24 +1,22 @@
-
 import Ducks from './Allducks'
 import Nav from './Nav'
-import {IfAuthenticated,IfNotAuthenticated} from './Authenticated'
+import { IfAuthenticated, IfNotAuthenticated } from './Authenticated'
 import LoginPage from './LoginPage'
-
+import { Flex } from '@chakra-ui/react'
 
 function App() {
- // const navigate = useNavigate()
- // const isAuth = true
+  // const navigate = useNavigate()
+  // const isAuth = true
 
   return (
     <div>
       <IfNotAuthenticated>
-        <LoginPage/>
-        </IfNotAuthenticated>
+        <LoginPage />
+      </IfNotAuthenticated>
       <div>
         <IfAuthenticated>
-        <Ducks />
-        <Nav />
-
+          <Nav />
+          <Ducks />
         </IfAuthenticated>
       </div>
     </div>
