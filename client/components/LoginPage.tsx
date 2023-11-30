@@ -8,6 +8,12 @@ import { useAuth0 } from '@auth0/auth0-react'
 export default function LoginPage() {
   const [visibility, setVisibility] = useState(false)
 
+  const { user, logout, loginWithRedirect } = useAuth0()
+
+  const handleSignIn = () => {
+    loginWithRedirect()
+  }
+
   const quack = new Audio('/audio/trimmed-quack.mp3')
 
   const handleClick = () => {
@@ -26,15 +32,15 @@ export default function LoginPage() {
       >
         <Center>
           <ButtonGroup marginTop="50vh">
-            <IfNotAuthenticated>
-              <Button
-                leftIcon={<GiDuck />}
-                borderColor="black"
-                borderWidth="1px"
-              >
-                Login
-              </Button>
-            </IfNotAuthenticated>
+            <Button
+              leftIcon={<GiDuck />}
+              borderColor="black"
+              borderWidth="1px"
+              onClick={handleSignIn}
+            >
+              Login
+            </Button>
+
             <Button
               rightIcon={<CgNotes />}
               borderColor="black"
