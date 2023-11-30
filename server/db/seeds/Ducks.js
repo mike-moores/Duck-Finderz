@@ -54,5 +54,17 @@ export async function seed(knex) {
       image: '/images/mike-duck.png',
       rarity: 2,
     },
+    {
+      id: 13,
+      name: 'GoJo Duck',
+      image: '/images/gojo-duck.png',
+      rarity: 2,
+    },
+    {
+      id: 14,
+      name: 'Blue Mike Duck',
+      image: '/images/blue-mike-duck.png',
+      rarity: 2,
+    },
   ])
 }
