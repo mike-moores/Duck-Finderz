@@ -1,10 +1,11 @@
 export interface Duck {
-id: number
-name: string
-image:  string
+  id: number
+  name: string
+  image: string
+  rarity: number
 }
 
-export interface User{
+export interface User {
   id: number
   name: string
   email: string

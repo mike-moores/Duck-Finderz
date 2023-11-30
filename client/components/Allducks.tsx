@@ -13,12 +13,7 @@ import {
   Image,
   Stack,
 } from '@chakra-ui/react'
-
-interface Duck {
-  id: number
-  image: string
-  name: string
-}
+import { Duck } from '../../models/Ducks'
 
 const Ducks = () => {
   const {
@@ -74,26 +69,28 @@ const Ducks = () => {
           </GridItem>
 
           {Ducks ? (
-            Ducks.map((Duck: Duck) => (
-              <GridItem key={Duck.id} colSpan={1} marginBottom="20px">
-                <Grid templateColumns="repeat(3, 1fr)">
-                  <Card borderColor="#044c34" borderWidth="1px">
-                    {/* <CardBody> */}
-                    <Image src={Duck.image} alt={Duck.name}></Image>
-                    {/* </CardBody> */}
-                  </Card>
-                  <Text
-                    fontSize="xl"
-                    fontWeight="bold"
-                    textAlign="center"
-                    fontFamily="shadows into  light"
-                    margin="auto auto auto auto"
-                  >
-                    x9
-                  </Text>
-                </Grid>
-              </GridItem>
-            ))
+            Ducks.map((Duck: Duck) =>
+              Duck.rarity == 1 ? (
+                <GridItem key={Duck.id} colSpan={1} marginBottom="20px">
+                  <Grid templateColumns="repeat(3, 1fr)">
+                    <Card borderColor="#044c34" borderWidth="1px">
+                      {/* <CardBody> */}
+                      <Image src={Duck.image} alt={Duck.name}></Image>
+                      {/* </CardBody> */}
+                    </Card>
+                    <Text
+                      fontSize="xl"
+                      fontWeight="bold"
+                      textAlign="center"
+                      fontFamily="shadows into  light"
+                      margin="auto auto auto auto"
+                    >
+                      x9
+                    </Text>
+                  </Grid>
+                </GridItem>
+              ) : null
+            )
           ) : (
             <p>No Ducks available</p>
           )}
@@ -118,26 +115,28 @@ const Ducks = () => {
           </GridItem>
 
           {Ducks ? (
-            Ducks.map((Duck: Duck) => (
-              <GridItem key={Duck.id} colSpan={1} marginBottom="20px">
-                <Grid templateColumns="repeat(3, 1fr)">
-                  <Card borderColor="#472273" borderWidth="1px">
-                    {/* <CardBody> */}
-                    <Image src={Duck.image} alt={Duck.name}></Image>
-                    {/* </CardBody> */}
-                  </Card>
-                  <Text
-                    fontSize="xl"
-                    fontWeight="bold"
-                    textAlign="center"
-                    fontFamily="shadows into  light"
-                    margin="auto auto auto auto"
-                  >
-                    x9
-                  </Text>
-                </Grid>
-              </GridItem>
-            ))
+            Ducks.map((Duck: Duck) =>
+              Duck.rarity == 2 ? (
+                <GridItem key={Duck.id} colSpan={1} marginBottom="20px">
+                  <Grid templateColumns="repeat(3, 1fr)">
+                    <Card borderColor="#472273" borderWidth="1px">
+                      {/* <CardBody> */}
+                      <Image src={Duck.image} alt={Duck.name}></Image>
+                      {/* </CardBody> */}
+                    </Card>
+                    <Text
+                      fontSize="xl"
+                      fontWeight="bold"
+                      textAlign="center"
+                      fontFamily="shadows into  light"
+                      margin="auto auto auto auto"
+                    >
+                      x9
+                    </Text>
+                  </Grid>
+                </GridItem>
+              ) : null
+            )
           ) : (
             <p>No Ducks available</p>
           )}
@@ -162,26 +161,28 @@ const Ducks = () => {
           </GridItem>
 
           {Ducks ? (
-            Ducks.map((Duck: Duck) => (
-              <GridItem key={Duck.id} colSpan={1} marginBottom="20px">
-                <Grid templateColumns="repeat(3, 1fr)">
-                  <Card borderColor="#fcc200" borderWidth="1px">
-                    {/* <CardBody> */}
-                    <Image src={Duck.image} alt={Duck.name}></Image>
-                    {/* </CardBody> */}
-                  </Card>
-                  <Text
-                    fontSize="xl"
-                    fontWeight="bold"
-                    textAlign="center"
-                    fontFamily="shadows into  light"
-                    margin="auto auto auto auto"
-                  >
-                    x9
-                  </Text>
-                </Grid>
-              </GridItem>
-            ))
+            Ducks.map((Duck: Duck) =>
+              Duck.rarity == 3 ? (
+                <GridItem key={Duck.id} colSpan={1} marginBottom="20px">
+                  <Grid templateColumns="repeat(3, 1fr)">
+                    <Card borderColor="#fcc200" borderWidth="1px">
+                      {/* <CardBody> */}
+                      <Image src={Duck.image} alt={Duck.name}></Image>
+                      {/* </CardBody> */}
+                    </Card>
+                    <Text
+                      fontSize="xl"
+                      fontWeight="bold"
+                      textAlign="center"
+                      fontFamily="shadows into  light"
+                      margin="auto auto auto auto"
+                    >
+                      x9
+                    </Text>
+                  </Grid>
+                </GridItem>
+              ) : null
+            )
           ) : (
             <p>No Ducks available</p>
           )}
