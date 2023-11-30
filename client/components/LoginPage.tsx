@@ -37,7 +37,7 @@ export default function LoginPage() {
               borderWidth="1px"
               onClick={handleSignIn}
             >
-              Login
+              Sign In
             </Button>
 
             <Button
