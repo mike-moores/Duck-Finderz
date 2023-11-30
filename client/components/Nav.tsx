@@ -22,7 +22,6 @@ function Nav() {
           <button onClick={handleSignIn}>Sign in</button>
         </IfNotAuthenticated>
       </nav>
-      <h1>Fruit FTW!</h1>
     </>
   )
 }
