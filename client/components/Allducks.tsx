@@ -13,12 +13,7 @@ import {
   Image,
   Stack,
 } from '@chakra-ui/react'
-
-interface Duck {
-  id: number
-  image: string
-  name: string
-}
+import { Duck } from '../../models/Ducks'
 
 const Ducks = () => {
   const {
@@ -37,47 +32,162 @@ const Ducks = () => {
 
   return (
     <div>
-      <header className="header">
-        <Container bgColor="grey">
-          <Grid templateColumns="repeat(3, 1fr)">
-            <GridItem colSpan={3}>
-              {' '}
-              <Center>
-                <Heading size="3xl">Duck Collection!!</Heading>
-              </Center>
-            </GridItem>
-            <GridItem colSpan={2}>
-              {' '}
-              <Text fontSize="4xl">New Duck</Text>
-            </GridItem>
+      <Container>
+        <Grid templateColumns="repeat(3, 1fr)">
+          <GridItem colSpan={3}>
+            {' '}
+            <Center>
+              <Heading
+                fontFamily="shadows into  light"
+                size="3xl"
+                marginTop="10px"
+                marginBottom="10px"
+              >
+                Duck Collection!!
+              </Heading>
+            </Center>
+          </GridItem>
 
-            <GridItem colSpan={3}>
-              <Box bg="tomato" w="100%" p={4} color="white">
+          <GridItem colSpan={3}>
+            <Box
+              bg="#044c34"
+              w="100%"
+              p={4}
+              color="white"
+              marginBottom="10px"
+              borderRadius="5px"
+            >
+              <Text
+                textAlign="center"
+                fontFamily="shadows into  light"
+                fontSize="xl"
+                fontWeight="bold"
+              >
                 Common
-              </Box>
-            </GridItem>
+              </Text>
+            </Box>
+          </GridItem>
 
-            {Ducks ? (
-              Ducks.map((Duck: Duck) => (
-                <GridItem key={Duck.id} colSpan={1}>
+          {Ducks ? (
+            Ducks.map((Duck: Duck) =>
+              Duck.rarity == 1 ? (
+                <GridItem key={Duck.id} colSpan={1} marginBottom="20px">
                   <Grid templateColumns="repeat(3, 1fr)">
-                    <Card>
+                    <Card borderColor="#044c34" borderWidth="1px">
                       {/* <CardBody> */}
                       <Image src={Duck.image} alt={Duck.name}></Image>
                       {/* </CardBody> */}
                     </Card>
-                    <Text>x9</Text>
+                    <Text
+                      fontSize="xl"
+                      fontWeight="bold"
+                      textAlign="center"
+                      fontFamily="shadows into  light"
+                      margin="auto auto auto auto"
+                    >
+                      x9
+                    </Text>
                   </Grid>
                 </GridItem>
-              ))
-            ) : (
-              <p>No Ducks available</p>
-            )}
-          </Grid>
-          <Text></Text>
-        </Container>
-      </header>
-      <section className="main">{/* add your code here */}</section>
+              ) : null
+            )
+          ) : (
+            <p>No Ducks available</p>
+          )}
+          <GridItem colSpan={3}>
+            <Box
+              bg="#472273"
+              w="100%"
+              p={4}
+              color="white"
+              marginBottom="10px"
+              borderRadius="5px"
+            >
+              <Text
+                textAlign="center"
+                fontFamily="shadows into  light"
+                fontSize="xl"
+                fontWeight="bold"
+              >
+                Rare
+              </Text>
+            </Box>
+          </GridItem>
+
+          {Ducks ? (
+            Ducks.map((Duck: Duck) =>
+              Duck.rarity == 2 ? (
+                <GridItem key={Duck.id} colSpan={1} marginBottom="20px">
+                  <Grid templateColumns="repeat(3, 1fr)">
+                    <Card borderColor="#472273" borderWidth="1px">
+                      {/* <CardBody> */}
+                      <Image src={Duck.image} alt={Duck.name}></Image>
+                      {/* </CardBody> */}
+                    </Card>
+                    <Text
+                      fontSize="xl"
+                      fontWeight="bold"
+                      textAlign="center"
+                      fontFamily="shadows into  light"
+                      margin="auto auto auto auto"
+                    >
+                      x9
+                    </Text>
+                  </Grid>
+                </GridItem>
+              ) : null
+            )
+          ) : (
+            <p>No Ducks available</p>
+          )}
+          <GridItem colSpan={3}>
+            <Box
+              bg="#fcc200"
+              w="100%"
+              p={4}
+              color="white"
+              marginBottom="10px"
+              borderRadius="5px"
+            >
+              <Text
+                textAlign="center"
+                fontFamily="shadows into  light"
+                fontSize="xl"
+                fontWeight="bold"
+              >
+                Legendary
+              </Text>
+            </Box>
+          </GridItem>
+
+          {Ducks ? (
+            Ducks.map((Duck: Duck) =>
+              Duck.rarity == 3 ? (
+                <GridItem key={Duck.id} colSpan={1} marginBottom="20px">
+                  <Grid templateColumns="repeat(3, 1fr)">
+                    <Card borderColor="#fcc200" borderWidth="1px">
+                      {/* <CardBody> */}
+                      <Image src={Duck.image} alt={Duck.name}></Image>
+                      {/* </CardBody> */}
+                    </Card>
+                    <Text
+                      fontSize="xl"
+                      fontWeight="bold"
+                      textAlign="center"
+                      fontFamily="shadows into  light"
+                      margin="auto auto auto auto"
+                    >
+                      x9
+                    </Text>
+                  </Grid>
+                </GridItem>
+              ) : null
+            )
+          ) : (
+            <p>No Ducks available</p>
+          )}
+        </Grid>
+      </Container>
     </div>
   )
 }

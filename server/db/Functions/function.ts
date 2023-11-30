@@ -14,4 +14,4 @@ function getDuck(): Promise<Duck[]> {
     })
 }
 
-export {getDuck}
+export { getDuck }
