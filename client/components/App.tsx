@@ -15,7 +15,6 @@ function App() {
       </IfNotAuthenticated>
       <div>
         <IfAuthenticated>
-          <Nav />
           <Ducks />
         </IfAuthenticated>
       </div>

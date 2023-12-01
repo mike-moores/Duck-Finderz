@@ -14,6 +14,7 @@ import {
   Stack,
 } from '@chakra-ui/react'
 import { Duck } from '../../models/Ducks'
+import { Link } from 'react-router-dom'
 
 const Ducks = () => {
   const {
@@ -73,11 +74,13 @@ const Ducks = () => {
               Duck.rarity == 1 ? (
                 <GridItem key={Duck.id} colSpan={1} marginBottom="20px">
                   <Grid templateColumns="repeat(3, 1fr)">
-                    <Card borderColor="#044c34" borderWidth="1px">
-                      {/* <CardBody> */}
-                      <Image src={Duck.image} alt={Duck.name}></Image>
-                      {/* </CardBody> */}
-                    </Card>
+                    <Link to={`/${Duck.id}`}>
+                      <Card borderColor="#044c34" borderWidth="1px">
+                        {/* <CardBody> */}
+                        <Image src={Duck.image} alt={Duck.name}></Image>
+                        {/* </CardBody> */}
+                      </Card>
+                    </Link>
                     <Text
                       fontSize="xl"
                       fontWeight="bold"
@@ -119,11 +122,13 @@ const Ducks = () => {
               Duck.rarity == 2 ? (
                 <GridItem key={Duck.id} colSpan={1} marginBottom="20px">
                   <Grid templateColumns="repeat(3, 1fr)">
-                    <Card borderColor="#472273" borderWidth="1px">
-                      {/* <CardBody> */}
-                      <Image src={Duck.image} alt={Duck.name}></Image>
-                      {/* </CardBody> */}
-                    </Card>
+                    <Link to={`/${Duck.id}`}>
+                      <Card borderColor="#472273" borderWidth="1px">
+                        {/* <CardBody> */}
+                        <Image src={Duck.image} alt={Duck.name}></Image>
+                        {/* </CardBody> */}
+                      </Card>
+                    </Link>
                     <Text
                       fontSize="xl"
                       fontWeight="bold"
@@ -165,11 +170,13 @@ const Ducks = () => {
               Duck.rarity == 3 ? (
                 <GridItem key={Duck.id} colSpan={1} marginBottom="20px">
                   <Grid templateColumns="repeat(3, 1fr)">
-                    <Card borderColor="#fcc200" borderWidth="1px">
-                      {/* <CardBody> */}
-                      <Image src={Duck.image} alt={Duck.name}></Image>
-                      {/* </CardBody> */}
-                    </Card>
+                    <Link to={`/${Duck.id}`}>
+                      <Card borderColor="#fcc200" borderWidth="1px">
+                        {/* <CardBody> */}
+                        <Image src={Duck.image} alt={Duck.name}></Image>
+                        {/* </CardBody> */}
+                      </Card>
+                    </Link>
                     <Text
                       fontSize="xl"
                       fontWeight="bold"
