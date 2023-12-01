@@ -5,4 +5,9 @@ async function getDuck() {
   return data.body
 }
 
-export { getDuck, getDuckByRarity }
+async function getDuckById(id: number) {
+  const data = await request.get(`/api/v1/routes/${id}`)
+  return data.body
+}
+
+export { getDuck, getDuckById }

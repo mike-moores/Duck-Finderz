@@ -4,6 +4,8 @@ const up = function (knex) {
     table.string('name')
     table.string('image')
     table.integer('rarity')
+    table.string('creator')
+    table.string('backstory')
   })
 }
 
