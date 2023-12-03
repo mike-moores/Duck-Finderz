@@ -16,7 +16,7 @@ import {
 import { Duck } from '../../models/Ducks'
 import { Link } from 'react-router-dom'
 
-const Ducks = () => {
+const Collection = () => {
   const {
     data: Ducks,
     isLoading,
@@ -72,9 +72,9 @@ const Ducks = () => {
           {Ducks ? (
             Ducks.map((Duck: Duck) =>
               Duck.rarity == 1 ? (
-                <GridItem key={Duck.id} colSpan={1} marginBottom="20px">
+                <GridItem key={Duck.id} colSpan={1} margin="0 10px 20px 10px">
                   <Grid templateColumns="repeat(3, 1fr)">
-                    <Link to={`/${Duck.id}`}>
+                    <Link to={`/ducks/${Duck.id}`}>
                       <Card borderColor="#044c34" borderWidth="1px">
                         {/* <CardBody> */}
                         <Image src={Duck.image} alt={Duck.name}></Image>
@@ -120,9 +120,9 @@ const Ducks = () => {
           {Ducks ? (
             Ducks.map((Duck: Duck) =>
               Duck.rarity == 2 ? (
-                <GridItem key={Duck.id} colSpan={1} marginBottom="20px">
+                <GridItem key={Duck.id} colSpan={1} margin="0 10px 20px 10px">
                   <Grid templateColumns="repeat(3, 1fr)">
-                    <Link to={`/${Duck.id}`}>
+                    <Link to={`/ducks/${Duck.id}`}>
                       <Card borderColor="#472273" borderWidth="1px">
                         {/* <CardBody> */}
                         <Image src={Duck.image} alt={Duck.name}></Image>
@@ -168,9 +168,9 @@ const Ducks = () => {
           {Ducks ? (
             Ducks.map((Duck: Duck) =>
               Duck.rarity == 3 ? (
-                <GridItem key={Duck.id} colSpan={1} marginBottom="20px">
+                <GridItem key={Duck.id} colSpan={1} margin="0 10px 20px 10px">
                   <Grid templateColumns="repeat(3, 1fr)">
-                    <Link to={`/${Duck.id}`}>
+                    <Link to={`/ducks/${Duck.id}`}>
                       <Card borderColor="#fcc200" borderWidth="1px">
                         {/* <CardBody> */}
                         <Image src={Duck.image} alt={Duck.name}></Image>
@@ -199,4 +199,4 @@ const Ducks = () => {
   )
 }
 
-export default Ducks
+export default Collection

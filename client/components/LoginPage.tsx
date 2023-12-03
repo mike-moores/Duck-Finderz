@@ -3,6 +3,7 @@ import { GiDuck } from 'react-icons/gi'
 import { CgNotes } from 'react-icons/cg'
 import { useState } from 'react'
 import { useAuth0 } from '@auth0/auth0-react'
+import { Link } from 'react-router-dom'
 
 export default function LoginPage() {
   const [visibility, setVisibility] = useState(false)
@@ -23,7 +24,7 @@ export default function LoginPage() {
   return (
     <>
       <Box
-        bgImage="url('/images/rubber-duck-login-removebg.png')"
+        bgImage="url('/images/duck_background_1.png')"
         bgPosition="center"
         bgRepeat="no-repeat"
         bgSize="100%"
@@ -39,7 +40,11 @@ export default function LoginPage() {
             >
               Sign In
             </Button>
-
+            <Link to={'/ducks'}>
+              <Button borderColor="black" borderWidth="1px">
+                Ducks
+              </Button>
+            </Link>
             <Button
               rightIcon={<CgNotes />}
               borderColor="black"
@@ -73,6 +78,7 @@ export default function LoginPage() {
             </Text>
           ) : null}
         </Center>
+        <Center></Center>
       </Box>
     </>
   )
