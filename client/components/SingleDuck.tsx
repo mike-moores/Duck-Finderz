@@ -80,12 +80,8 @@ export default function SingleDuck() {
           </Grid>
           <Text margin="0 30px 30px 30px">{duck.backstory}</Text>
         </Container>
-        <Center marginTop="15px">
-          <Link to={'/'}>
-            <Button>Collection</Button>
-          </Link>
-        </Center>
-        <Container margin="50px 0 50px 0">
+
+        <Container margin="50px 0 0 0">
           <Heading
             fontFamily="shadows into  light"
             size="xl"
@@ -103,7 +99,7 @@ export default function SingleDuck() {
                   alignContent="center"
                   margin="10px auto 10px auto"
                 >
-                  <Link to={`/${d.id}`}>
+                  <Link to={`/ducks/${d.id}`}>
                     <Card
                       borderColor="black"
                       borderWidth="1px"

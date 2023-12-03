@@ -1,4 +1,4 @@
-import Ducks from './Allducks'
+import Collection from './Collection'
 import Nav from './Nav'
 import { IfAuthenticated, IfNotAuthenticated } from './Authenticated'
 import LoginPage from './LoginPage'
@@ -15,7 +15,7 @@ function App() {
       </IfNotAuthenticated>
       <div>
         <IfAuthenticated>
-          <Ducks />
+          <Collection />
         </IfAuthenticated>
       </div>
     </div>

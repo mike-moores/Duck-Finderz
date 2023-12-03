@@ -10,6 +10,8 @@ import {
   Spacer,
   VStack,
 } from '@chakra-ui/react'
+import { FcHome } from 'react-icons/fc'
+import { Link } from 'react-router-dom'
 
 function Nav() {
   const { user, logout, loginWithRedirect } = useAuth0()
@@ -29,12 +31,14 @@ function Nav() {
         w="100%"
         alignItems="center"
         gap="2"
-        bg="white"
+        bg="#E4B990"
         marginBottom="10px"
       >
-        <Box p="2">
-          <Heading size="md">Duck Finderz</Heading>
-        </Box>
+        <Link to={'/'}>
+          <Box margin="5px 0 0 5px" p="2">
+            <FcHome></FcHome>
+          </Box>
+        </Link>
         <Spacer />
         <VStack spacing="4px">
           <IfAuthenticated>
@@ -52,11 +56,19 @@ function Nav() {
             </Button>
           </IfAuthenticated>
           <IfNotAuthenticated>
-            <button onClick={handleSignIn}>Sign in</button>
+            <Button
+              margin="5px 10px 0 0"
+              variant="ghost"
+              colorScheme="gray"
+              fontSize="xs"
+              color="black"
+              onClick={handleSignIn}
+            >
+              Sign in
+            </Button>
           </IfNotAuthenticated>
         </VStack>
       </Flex>
-      <Divider></Divider>
     </>
   )
 }
