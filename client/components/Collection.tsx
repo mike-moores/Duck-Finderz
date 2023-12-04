@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query'
-import { getDuck } from '../apis/api'
+import { getCollectionByUserName } from '../apis/api'
 import {
   Box,
   Card,
@@ -13,15 +13,19 @@ import {
   Image,
   Stack,
 } from '@chakra-ui/react'
-import { Duck } from '../../models/Ducks'
-import { Link } from 'react-router-dom'
+import { Collection } from '../../models/Ducks'
+import { Link, useParams } from 'react-router-dom'
+import { useAuth0 } from '@auth0/auth0-react'
 
-const Collection = () => {
+const UserCollection = () => {
+const { user } = useAuth0()
+const username = user?.nickname as string
+console.log(user?.nickname)
   const {
     data: Ducks,
     isLoading,
     error,
-  } = useQuery<Duck[]>({ queryKey: ['Ducks'], queryFn: getDuck })
+  } = useQuery<[Collection]>({ queryKey: ['Collection', username], queryFn: getCollectionByUserName(username) })
 
   if (isLoading) {
     return <p>Loading...</p>
@@ -199,4 +203,4 @@ const Collection = () => {
   )
 }
 
-export default Collection
+export default UserCollection
