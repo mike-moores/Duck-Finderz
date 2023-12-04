@@ -18,14 +18,18 @@ import { Link, useParams } from 'react-router-dom'
 import { useAuth0 } from '@auth0/auth0-react'
 
 const UserCollection = () => {
-const { user } = useAuth0()
-const username = user?.nickname as string
-console.log(user?.nickname)
+  const { user } = useAuth0();
+  const username = user?.nickname as string;
+  console.log(user?.nickname);
+
   const {
     data: Ducks,
     isLoading,
     error,
-  } = useQuery<[Collection]>({ queryKey: ['Collection', username], queryFn: getCollectionByUserName(username) })
+  } = useQuery<[Collection]>({
+    queryKey: ['Collection', username],
+    queryFn: () => getCollectionByUserName(username),
+  });
 
   if (isLoading) {
     return <p>Loading...</p>
