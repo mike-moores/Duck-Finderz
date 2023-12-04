@@ -9,8 +9,11 @@ import {
   Heading,
   Spacer,
   VStack,
+  Text,
 } from '@chakra-ui/react'
 import { FcHome } from 'react-icons/fc'
+import { GiDuck } from 'react-icons/gi'
+import { FaMagnifyingGlass } from 'react-icons/fa6'
 import { Link } from 'react-router-dom'
 
 function Nav() {
@@ -29,26 +32,37 @@ function Nav() {
       <Flex
         as="header"
         w="100%"
+        h="10vh"
         alignItems="center"
         gap="2"
         bg="#E4B990"
-        marginBottom="10px"
+        marginBottom="30px"
       >
         <Link to={'/'}>
-          <Box margin="5px 0 0 5px" p="2">
-            <FcHome></FcHome>
+          <Box margin="10px 10px 10px 10px" p="2">
+            <FcHome size={50}></FcHome>
+          </Box>
+        </Link>
+        <Link to={'/ducks'}>
+          <Box margin="10px 10px 10px 10px" p="2">
+            <GiDuck size={50}></GiDuck>
           </Box>
         </Link>
         <Spacer />
+        <Heading fontFamily="shadows into  light" fontWeight="bold">
+          DUCK FINDERZ
+        </Heading>
+
+        <Spacer />
         <VStack spacing="4px">
           <IfAuthenticated>
-            <Container fontSize="xs">
+            <Container fontSize="s">
               {user && <p>Signed in as: {user?.nickname}</p>}
             </Container>
             <Button
               variant="ghost"
               colorScheme="gray"
-              fontSize="xs"
+              fontSize="s"
               color="black"
               onClick={handleSignOut}
             >
@@ -57,10 +71,10 @@ function Nav() {
           </IfAuthenticated>
           <IfNotAuthenticated>
             <Button
-              margin="5px 10px 0 0"
+              margin="10px 10px 10px 10px"
               variant="ghost"
               colorScheme="gray"
-              fontSize="xs"
+              fontSize="s"
               color="black"
               onClick={handleSignIn}
             >

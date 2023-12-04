@@ -41,10 +41,10 @@ const Collection = () => {
               <Heading
                 fontFamily="shadows into  light"
                 size="3xl"
-                marginTop="10px"
-                marginBottom="10px"
+                marginTop="20px"
+                marginBottom="40px"
               >
-                Duck Collection!!
+                Duck Collection
               </Heading>
             </Center>
           </GridItem>
@@ -61,7 +61,7 @@ const Collection = () => {
               <Text
                 textAlign="center"
                 fontFamily="shadows into  light"
-                fontSize="xl"
+                fontSize="2xl"
                 fontWeight="bold"
               >
                 Common
@@ -72,7 +72,11 @@ const Collection = () => {
           {Ducks ? (
             Ducks.map((Duck: Duck) =>
               Duck.rarity == 1 ? (
-                <GridItem key={Duck.id} colSpan={1} margin="0 10px 20px 10px">
+                <GridItem
+                  key={Duck.id}
+                  colSpan={1}
+                  margin="20px 10px 20px 10px"
+                >
                   <Grid templateColumns="repeat(3, 1fr)">
                     <Link to={`/ducks/${Duck.id}`}>
                       <Card borderColor="#044c34" borderWidth="1px">
@@ -82,7 +86,7 @@ const Collection = () => {
                       </Card>
                     </Link>
                     <Text
-                      fontSize="xl"
+                      fontSize="2xl"
                       fontWeight="bold"
                       textAlign="center"
                       fontFamily="shadows into  light"
@@ -109,7 +113,7 @@ const Collection = () => {
               <Text
                 textAlign="center"
                 fontFamily="shadows into  light"
-                fontSize="xl"
+                fontSize="2xl"
                 fontWeight="bold"
               >
                 Rare
@@ -120,7 +124,11 @@ const Collection = () => {
           {Ducks ? (
             Ducks.map((Duck: Duck) =>
               Duck.rarity == 2 ? (
-                <GridItem key={Duck.id} colSpan={1} margin="0 10px 20px 10px">
+                <GridItem
+                  key={Duck.id}
+                  colSpan={1}
+                  margin="20px 10px 20px 10px"
+                >
                   <Grid templateColumns="repeat(3, 1fr)">
                     <Link to={`/ducks/${Duck.id}`}>
                       <Card borderColor="#472273" borderWidth="1px">
@@ -130,7 +138,7 @@ const Collection = () => {
                       </Card>
                     </Link>
                     <Text
-                      fontSize="xl"
+                      fontSize="2xl"
                       fontWeight="bold"
                       textAlign="center"
                       fontFamily="shadows into  light"
@@ -157,7 +165,7 @@ const Collection = () => {
               <Text
                 textAlign="center"
                 fontFamily="shadows into  light"
-                fontSize="xl"
+                fontSize="2xl"
                 fontWeight="bold"
               >
                 Legendary
@@ -168,7 +176,11 @@ const Collection = () => {
           {Ducks ? (
             Ducks.map((Duck: Duck) =>
               Duck.rarity == 3 ? (
-                <GridItem key={Duck.id} colSpan={1} margin="0 10px 20px 10px">
+                <GridItem
+                  key={Duck.id}
+                  colSpan={1}
+                  margin="20px 10px 20px 10px"
+                >
                   <Grid templateColumns="repeat(3, 1fr)">
                     <Link to={`/ducks/${Duck.id}`}>
                       <Card borderColor="#fcc200" borderWidth="1px">
@@ -178,7 +190,7 @@ const Collection = () => {
                       </Card>
                     </Link>
                     <Text
-                      fontSize="xl"
+                      fontSize="2xl"
                       fontWeight="bold"
                       textAlign="center"
                       fontFamily="shadows into  light"

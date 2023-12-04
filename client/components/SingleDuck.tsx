@@ -48,13 +48,13 @@ export default function SingleDuck() {
           <Heading
             fontFamily="shadows into  light"
             size="3xl"
-            marginTop="10px"
+            marginTop="30px"
             marginBottom="10px"
             textAlign="center"
           >
             {duck.name}
           </Heading>
-          <Grid templateColumns="repeat(2, 1fr)" margin="15px 30px 20px 30px">
+          <Grid templateColumns="repeat(2, 1fr)" margin="30px 30px 20px 30px">
             <GridItem alignContent="center">
               <Card
                 borderColor="black"
@@ -78,7 +78,7 @@ export default function SingleDuck() {
               <Text>Creator: {duck.creator}</Text>
             </GridItem>
           </Grid>
-          <Text margin="0 30px 30px 30px">{duck.backstory}</Text>
+          <Text margin="30px 30px 50px 30px">{duck.backstory}</Text>
         </Container>
 
         <Container margin="50px 0 0 0">
