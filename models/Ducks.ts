@@ -12,8 +12,7 @@ export interface User {
 }
 
 export interface Collection {
-  id: number
+  username: string
   duckId: number
-  userId: number
   timesCollected: number
 }

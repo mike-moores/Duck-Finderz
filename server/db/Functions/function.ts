@@ -1,4 +1,4 @@
-import { Duck } from '../../../models/Ducks.ts'
+import { Collection, Duck } from '../../../models/Ducks.ts'
 import connection from '../connection.ts'
 
 async function getDuck(): Promise<Duck[]> {
@@ -11,4 +11,10 @@ async function getDuckById(id: number): Promise<Duck> {
   return data as Duck
 }
 
-export { getDuck, getDuckById }
+async function getCollectionByUserName(username: string): Promise<Collection[]> {
+  const data = await connection('Collection').where('username',username).join('Ducks','Collection.duck_Id', 'Ducks.id').select('*')
+  return data as Collection[]
+}
+
+
+export { getDuck, getDuckById, getCollectionByUserName}
