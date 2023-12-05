@@ -1,5 +1,5 @@
-import { useQuery } from '@tanstack/react-query'
-import { getCollectionByUserName } from '../apis/api'
+import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
+import { getCollectionByUserName, newUser } from '../apis/api'
 import {
   Box,
   Card,
@@ -17,12 +17,21 @@ import { Collection } from '../../models/Ducks'
 import { Link, useParams } from 'react-router-dom'
 import { useAuth0 } from '@auth0/auth0-react'
 import { duckCollected } from '../../server/db/Functions/function'
+import { useState } from 'react'
 
 const UserCollection = () => {
-  const { user } = useAuth0()
+  const { user, isAuthenticated } = useAuth0()
   const username = user?.nickname as string
-  console.log(user?.nickname)
-  console.log(username)
+  const [userName, setUserName] = useState('Duck-O')
+
+  const queryClient = useQueryClient()
+
+  const userMutation = useMutation({
+    mutationFn: newUser,
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ['Collection'] })
+    },
+  })
 
   const {
     data: Ducks,
@@ -31,6 +40,7 @@ const UserCollection = () => {
   } = useQuery<[Collection]>({
     queryKey: ['Collection', username],
     queryFn: () => getCollectionByUserName(username),
+    enabled: isAuthenticated,
   })
 
   console.log(Ducks)
@@ -42,13 +52,18 @@ const UserCollection = () => {
   if (error) {
     return <p>Error fetching Ducks: </p>
   }
+  if (isAuthenticated && !Ducks) {
+    if (userName !== username) {
+      setUserName(username)
+      userMutation.mutate(username)
+    }
+  }
 
   return (
     <div>
       <Container marginTop="25px">
         <Grid templateColumns="repeat(3, 1fr)">
           <GridItem colSpan={3}>
-            {' '}
             <Center>
               <Heading
                 fontFamily="shadows into  light"

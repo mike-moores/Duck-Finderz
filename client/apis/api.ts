@@ -11,13 +11,11 @@ async function getDuckById(id: number) {
 }
 
 async function getCollectionByUserName(username: string) {
-  console.log(username)
   const data = await request.get(`/api/v1/routes/user/${username}`)
   return data.body
 }
 
 async function newUser(username: string) {
-  console.log('FROM API,', username)
   const data = await request
     .post(`/api/v1/routes/new/${username}`)
     .send({ username })

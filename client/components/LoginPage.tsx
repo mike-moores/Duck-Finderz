@@ -14,33 +14,15 @@ import { CgNotes } from 'react-icons/cg'
 import { useState } from 'react'
 import { useAuth0 } from '@auth0/auth0-react'
 import { Link } from 'react-router-dom'
-import { newUser } from '../apis/api'
-import { useMutation, useQueryClient } from '@tanstack/react-query'
 
 export default function LoginPage() {
   const [visibility, setVisibility] = useState(false)
-  const initialState = 'duck'
-  const [userName, setUserName] = useState(initialState)
-  const queryClient = useQueryClient()
 
-  const { user, logout, loginWithRedirect } = useAuth0()
-
-  const authUserName = user?.nickname as string
+  const { loginWithRedirect } = useAuth0()
 
   const handleSignIn = () => {
     loginWithRedirect()
-    console.log('loading username')
-    userName && userMutation.mutate(authUserName)
-    console.log('handle sign in called ', authUserName)
-    setUserName(authUserName)
   }
-
-  const userMutation = useMutation({
-    mutationFn: newUser,
-    onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ['Collection'] })
-    },
-  })
 
   const quack = new Audio('/audio/trimmed-quack.mp3')
 
