@@ -21,7 +21,8 @@ import { duckCollected } from '../../server/db/Functions/function'
 const UserCollection = () => {
   const { user } = useAuth0()
   const username = user?.nickname as string
-  // console.log(user?.nickname)
+  console.log(user?.nickname)
+  console.log(username)
 
   const {
     data: Ducks,

@@ -19,18 +19,20 @@ import { useMutation, useQueryClient } from '@tanstack/react-query'
 
 export default function LoginPage() {
   const [visibility, setVisibility] = useState(false)
+  const initialState = 'duck'
+  const [userName, setUserName] = useState(initialState)
   const queryClient = useQueryClient()
 
   const { user, logout, loginWithRedirect } = useAuth0()
 
-  const userName = user?.nickname as string
+  const authUserName = user?.nickname as string
 
   const handleSignIn = () => {
     loginWithRedirect()
     console.log('loading username')
-    userName && userMutation.mutate(userName)
-    console.log('handle sign in called ', userName)
-    
+    userName && userMutation.mutate(authUserName)
+    console.log('handle sign in called ', authUserName)
+    setUserName(authUserName)
   }
 
   const userMutation = useMutation({

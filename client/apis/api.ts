@@ -11,6 +11,7 @@ async function getDuckById(id: number) {
 }
 
 async function getCollectionByUserName(username: string) {
+  console.log(username)
   const data = await request.get(`/api/v1/routes/user/${username}`)
   return data.body
 }
