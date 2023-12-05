@@ -1,5 +1,11 @@
 import express from 'express'
-import { getDuck, getDuckById, getCollectionByUserName } from '../db/Functions/function'
+import {
+  getDuck,
+  getDuckById,
+  getCollectionByUserName,
+  duckCollected,
+  collectedCanary,
+} from '../db/Functions/function'
 
 const router = express.Router()
 
@@ -34,6 +40,19 @@ router.get('/user/:username', async (req, res) => {
   } catch (error) {
     console.error('Error fetching Collection:', error)
     res.status(500).json({ error: 'Internal Server Error' })
+  }
+})
+
+router.put('/collect-duck', async (req, res) => {
+  try {
+    const { duckId, username } = req.body
+    await duckCollected(duckId, username)
+    const canary = await collectedCanary()
+    console.log(canary, req.body)
+    res.status(200).json({ message: `Duck Collected` })
+  } catch (e) {
+    console.error('Error collecting duck:', e)
+    res.status(500).json({ e: 'Internal Server Error' })
   }
 })
 

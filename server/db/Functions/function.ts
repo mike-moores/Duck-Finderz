@@ -11,10 +11,33 @@ async function getDuckById(id: number): Promise<Duck> {
   return data as Duck
 }
 
-async function getCollectionByUserName(username: string): Promise<Collection[]> {
-  const data = await connection('Collection').where('username',username).join('Ducks','Collection.duck_Id', 'Ducks.id').select('*')
+async function getCollectionByUserName(
+  username: string
+): Promise<Collection[]> {
+  const data = await connection('Collection')
+    .where('username', username)
+    .join('Ducks', 'Collection.duck_Id', 'Ducks.id')
+    .select('*')
   return data as Collection[]
 }
 
+function collectedCanary() {
+  return connection('Collection').select('*')
+}
 
-export { getDuck, getDuckById, getCollectionByUserName}
+function duckCollected(duckId: number, username: string) {
+  return connection('Collection')
+    .update({
+      times_collected: connection.raw('times_collected + 1'),
+    })
+    .where('username', username)
+    .andWhere('duck_id', duckId)
+}
+
+export {
+  getDuck,
+  getDuckById,
+  getCollectionByUserName,
+  duckCollected,
+  collectedCanary,
+}
