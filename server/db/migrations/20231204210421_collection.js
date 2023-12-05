@@ -1,4 +1,4 @@
-export async function up (knex) {
+export async function up(knex) {
   return knex.schema.createTable('Collection', function (table) {
     table.integer('id')
     table.integer('duck_id')
@@ -10,5 +10,3 @@ export async function up (knex) {
 export async function down(knex) {
   await knex.schema.dropTable('Collection')
 }
-
-
