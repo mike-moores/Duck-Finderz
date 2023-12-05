@@ -15,4 +15,12 @@ async function getCollectionByUserName(username: string) {
   return data.body
 }
 
-export { getDuck, getDuckById, getCollectionByUserName }
+async function newUser(username: string) {
+  const data = await request
+    .post(`/api/v1/routes/new/${username}`)
+    .send({ username })
+
+  return data.body
+}
+
+export { getDuck, getDuckById, getCollectionByUserName, newUser }

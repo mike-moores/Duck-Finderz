@@ -18,7 +18,7 @@ import { Link } from 'react-router-dom'
 export default function LoginPage() {
   const [visibility, setVisibility] = useState(false)
 
-  const { user, logout, loginWithRedirect } = useAuth0()
+  const { loginWithRedirect } = useAuth0()
 
   const handleSignIn = () => {
     loginWithRedirect()
