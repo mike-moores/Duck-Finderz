@@ -10,4 +10,9 @@ async function getDuckById(id: number) {
   return data.body
 }
 
-export { getDuck, getDuckById }
+async function getCollectionByUserName(username: string) {
+  const data = await request.get(`/api/v1/routes/user/${username}`)
+  return data.body
+}
+
+export { getDuck, getDuckById, getCollectionByUserName }
