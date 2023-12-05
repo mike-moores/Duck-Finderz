@@ -17,7 +17,15 @@ async function getCollectionByUserName(
   const data = await connection('Collection')
     .where('username', username)
     .join('Ducks', 'Collection.duck_Id', 'Ducks.id')
-    .select('*')
+    .select([
+      'username',
+      'duck_id as duckId',
+      'times_collected as timesCollected',
+      'Ducks.id',
+      'name',
+      'image',
+      'rarity',
+    ])
   return data as Collection[]
 }
 

@@ -33,8 +33,7 @@ router.get('/:id', async (req, res) => {
 
 router.get('/user/:username', async (req, res) => {
   try {
-    const username = String(req.params.username)
-    console.log(username)
+    const username = req.params.username
     const Collection = await getCollectionByUserName(username)
     res.status(200).json(Collection)
   } catch (error) {
