@@ -42,10 +42,25 @@ function duckCollected(duckId: number, username: string) {
     .andWhere('duck_id', duckId)
 }
 
+async function newUser(username: string): Promise<Collection[]> {
+  const ducks = await connection('Ducks').select('id')
+
+  const newUserEntries = ducks.map((duck) => ({
+    username,
+    duck_id: duck.id,
+    times_collected: 0,
+  }))
+
+  return connection('Collection')
+    .insert(newUserEntries)
+    .returning(['id', 'duck_id', 'username', 'times_collected'])
+}
+
 export {
   getDuck,
   getDuckById,
   getCollectionByUserName,
   duckCollected,
   collectedCanary,
+  newUser,
 }
