@@ -45,17 +45,25 @@ const UserCollection = () => {
 
   console.log(Ducks)
 
-  if (isLoading) {
+  if (isLoading || !Ducks) {
     return <p>Loading...</p>
   }
 
   if (error) {
     return <p>Error fetching Ducks: </p>
   }
-  if (isAuthenticated && !Ducks) {
+  console.log('Ducks2:', Ducks)
+  console.log(userName)
+  console.log(username)
+  console.log(isAuthenticated)
+
+  if (Ducks.length <= 1) {
     if (userName !== username) {
       setUserName(username)
+      console.log('userName', userName)
       userMutation.mutate(username)
+
+      console.log('userMutation')
     }
   }
 
