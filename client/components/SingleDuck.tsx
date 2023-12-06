@@ -34,11 +34,19 @@ export default function SingleDuck() {
   })
 
   if (isError) {
-    return <p>There was an error getting the duck...</p>
+    return (
+      <Center>
+        <Heading fontFamily="shadows into  light">An error occurred...</Heading>
+      </Center>
+    )
   }
 
   if (!duck || isLoading) {
-    return <p>The duck is loading...</p>
+    return (
+      <Center>
+        <Heading fontFamily="shadows into  light">Loading...</Heading>
+      </Center>
+    )
   }
 
   return (
@@ -69,13 +77,13 @@ export default function SingleDuck() {
             </GridItem>
             <GridItem marginTop="75px">
               {duck.rarity == 1 ? (
-                <Text>Rarity: Common</Text>
+                <Text fontSize="xl">Rarity: Common</Text>
               ) : duck.rarity == 2 ? (
-                <Text>Rarity: Rare</Text>
+                <Text fontSize="xl">Rarity: Rare</Text>
               ) : duck.rarity == 3 ? (
-                <Text>Rarity: Legendary</Text>
+                <Text fontSize="xl">Rarity: Legendary</Text>
               ) : null}
-              <Text>Creator: {duck.creator}</Text>
+              <Text fontSize="xl">Creator: {duck.creator}</Text>
             </GridItem>
           </Grid>
           <Text margin="30px 30px 50px 30px">{duck.backstory}</Text>

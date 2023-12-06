@@ -57,7 +57,7 @@ function Nav() {
         <VStack spacing="4px">
           <IfAuthenticated>
             <Container fontSize="s">
-              {user && <p>Signed in as: {user?.nickname}</p>}
+              {user && <p>Username: {user?.nickname}</p>}
             </Container>
             <Button
               variant="ghost"
