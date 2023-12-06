@@ -19,10 +19,11 @@ Google Chrome browser
 
 This extension is being reviewed by google to be added to the Chrome Web Store Extensions, when completed a link to that for easy installation will be added here.
 
+After navigating to the download location for the [Duck Collector Chrome Extension](https://github.com/TayneB/duck-collector-extension)
 [Video Installation Guide](https://www.loom.com/share/eccf195bc688406ea22970ecf89b71eb?sid=0e0aeec1-a7b6-4b54-8305-e2403df81252)
 
 ## Installation 
-1. Navigate to the [Duck Collector Chrome Extension](https://github.com/TayneB/duck-collector-extension) download location
+1. Click the [Duck Collector Chrome Extension](https://github.com/TayneB/duck-collector-extension) link to go to the extensions download location
 1. Clone the repo or *download as a zip and extract
 2. Navigate to chrome://extensions/
 3. In [Chrome Extensions](chrome://extensions/) turn on developer mode. *Located in the top right of the chrome extensions tab ![DeveloperModeSwitch](https://github.com/manaia-2023/duck-collector-extension/assets/124834636/e57888a5-7c8a-4531-a459-7c63179a43a3)
