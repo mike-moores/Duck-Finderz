@@ -111,36 +111,36 @@ const UserCollection = () => {
               </Text>
             </Box>
           </GridItem>
-          <Container minH="3xs">
-            {Ducks ? (
-              Ducks.map((Duck: Collection) =>
-                Duck.rarity == 1 && Duck.timesCollected > 0 ? (
-                  <GridItem key={Duck.id} colSpan={1} margin="0 10px 20px 10px">
-                    <Grid templateColumns="repeat(3, 1fr)">
-                      <Link to={`/ducks/${Duck.id}`}>
-                        <Card borderColor="#044c34" borderWidth="1px">
-                          {/* <CardBody> */}
-                          <Image src={Duck.image} alt={Duck.name}></Image>
-                          {/* </CardBody> */}
-                        </Card>
-                      </Link>
-                      <Text
-                        fontSize="2xl"
-                        fontWeight="bold"
-                        textAlign="center"
-                        fontFamily="shadows into  light"
-                        margin="auto auto auto auto"
-                      >
-                        {Duck.timesCollected}
-                      </Text>
-                    </Grid>
-                  </GridItem>
-                ) : null
-              )
-            ) : (
-              <p>No Ducks available</p>
-            )}
-          </Container>
+
+          {Ducks ? (
+            Ducks.map((Duck: Collection) =>
+              Duck.rarity == 1 && Duck.timesCollected > 0 ? (
+                <GridItem key={Duck.id} colSpan={1} margin="0 10px 20px 10px">
+                  <Grid templateColumns="repeat(3, 1fr)">
+                    <Link to={`/ducks/${Duck.id}`}>
+                      <Card borderColor="#044c34" borderWidth="1px">
+                        {/* <CardBody> */}
+                        <Image src={Duck.image} alt={Duck.name}></Image>
+                        {/* </CardBody> */}
+                      </Card>
+                    </Link>
+                    <Text
+                      fontSize="2xl"
+                      fontWeight="bold"
+                      textAlign="center"
+                      fontFamily="shadows into  light"
+                      margin="auto auto auto auto"
+                    >
+                      {Duck.timesCollected}
+                    </Text>
+                  </Grid>
+                </GridItem>
+              ) : null
+            )
+          ) : (
+            <p>No Ducks available</p>
+          )}
+
           <GridItem colSpan={3}>
             <Box
               bg="#472273"
@@ -160,36 +160,36 @@ const UserCollection = () => {
               </Text>
             </Box>
           </GridItem>
-          <Container minH="3xs">
-            {Ducks ? (
-              Ducks.map((Duck: Collection) =>
-                Duck.rarity == 2 && Duck.timesCollected > 0 ? (
-                  <GridItem key={Duck.id} colSpan={1} margin="0 10px 20px 10px">
-                    <Grid templateColumns="repeat(3, 1fr)">
-                      <Link to={`/ducks/${Duck.id}`}>
-                        <Card borderColor="#472273" borderWidth="1px">
-                          {/* <CardBody> */}
-                          <Image src={Duck.image} alt={Duck.name}></Image>
-                          {/* </CardBody> */}
-                        </Card>
-                      </Link>
-                      <Text
-                        fontSize="2xl"
-                        fontWeight="bold"
-                        textAlign="center"
-                        fontFamily="shadows into  light"
-                        margin="auto auto auto auto"
-                      >
-                        {Duck.timesCollected}
-                      </Text>
-                    </Grid>
-                  </GridItem>
-                ) : null
-              )
-            ) : (
-              <p>No Ducks available</p>
-            )}
-          </Container>
+
+          {Ducks ? (
+            Ducks.map((Duck: Collection) =>
+              Duck.rarity == 2 && Duck.timesCollected > 0 ? (
+                <GridItem key={Duck.id} colSpan={1} margin="0 10px 20px 10px">
+                  <Grid templateColumns="repeat(3, 1fr)">
+                    <Link to={`/ducks/${Duck.id}`}>
+                      <Card borderColor="#472273" borderWidth="1px">
+                        {/* <CardBody> */}
+                        <Image src={Duck.image} alt={Duck.name}></Image>
+                        {/* </CardBody> */}
+                      </Card>
+                    </Link>
+                    <Text
+                      fontSize="2xl"
+                      fontWeight="bold"
+                      textAlign="center"
+                      fontFamily="shadows into  light"
+                      margin="auto auto auto auto"
+                    >
+                      {Duck.timesCollected}
+                    </Text>
+                  </Grid>
+                </GridItem>
+              ) : null
+            )
+          ) : (
+            <p>No Ducks available</p>
+          )}
+
           <GridItem colSpan={3}>
             <Box
               bg="#fcc200"
@@ -209,36 +209,35 @@ const UserCollection = () => {
               </Text>
             </Box>
           </GridItem>
-          <Container minH="3xs">
-            {Ducks ? (
-              Ducks.map((Duck: Collection) =>
-                Duck.rarity == 3 && Duck.timesCollected > 0 ? (
-                  <GridItem key={Duck.id} colSpan={1} margin="0 10px 20px 10px">
-                    <Grid templateColumns="repeat(3, 1fr)">
-                      <Link to={`/ducks/${Duck.id}`}>
-                        <Card borderColor="#fcc200" borderWidth="1px">
-                          {/* <CardBody> */}
-                          <Image src={Duck.image} alt={Duck.name}></Image>
-                          {/* </CardBody> */}
-                        </Card>
-                      </Link>
-                      <Text
-                        fontSize="2xl"
-                        fontWeight="bold"
-                        textAlign="center"
-                        fontFamily="shadows into  light"
-                        margin="auto auto auto auto"
-                      >
-                        {Duck.timesCollected}
-                      </Text>
-                    </Grid>
-                  </GridItem>
-                ) : null
-              )
-            ) : (
-              <p>No Ducks available</p>
-            )}
-          </Container>
+
+          {Ducks ? (
+            Ducks.map((Duck: Collection) =>
+              Duck.rarity == 3 && Duck.timesCollected > 0 ? (
+                <GridItem key={Duck.id} colSpan={1} margin="0 10px 20px 10px">
+                  <Grid templateColumns="repeat(3, 1fr)">
+                    <Link to={`/ducks/${Duck.id}`}>
+                      <Card borderColor="#fcc200" borderWidth="1px">
+                        {/* <CardBody> */}
+                        <Image src={Duck.image} alt={Duck.name}></Image>
+                        {/* </CardBody> */}
+                      </Card>
+                    </Link>
+                    <Text
+                      fontSize="2xl"
+                      fontWeight="bold"
+                      textAlign="center"
+                      fontFamily="shadows into  light"
+                      margin="auto auto auto auto"
+                    >
+                      {Duck.timesCollected}
+                    </Text>
+                  </Grid>
+                </GridItem>
+              ) : null
+            )
+          ) : (
+            <p>No Ducks available</p>
+          )}
         </Grid>
       </Container>
     </div>
